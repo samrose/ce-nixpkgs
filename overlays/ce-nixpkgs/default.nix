@@ -21,12 +21,12 @@ with lib;
 
   example = callPackage ./example {};
 
-  example-nixpkgs = recurseIntoAttrs {
+  ce-nixpkgs = recurseIntoAttrs {
     profile = tryDefault <nixos-config> ../../profiles;
 
     qemu = buildImage [
       ../../profiles/hardware/qemu
-      example-nixpkgs.profile
+      ce-nixpkgs.profile
     ];
   };
 
