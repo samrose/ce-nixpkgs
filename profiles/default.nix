@@ -2,6 +2,7 @@
 
 
 {
-   //environment.systemPackages = [ pkgs.emacs ];
-   services.mingetty.autologinUser = "root";
+  imports = [ ../modules ];
+
+  nixpkgs.overlays = [ (import ../overlays/ce-nixpkgs) ];
 }
